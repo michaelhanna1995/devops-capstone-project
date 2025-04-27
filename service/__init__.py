@@ -7,6 +7,7 @@ and SQL database
 import sys
 from flask import Flask
 from flask_talisman import Talisman
+from flask_cors import CORS
 from service import config
 from service.common import log_handlers
 
@@ -15,8 +16,10 @@ app = Flask(__name__)
 app.config.from_object(config)
 
 #Creating an instance of the Talisman
-
 talisman = Talisman(app)
+
+#CORS class passing in the Flask app
+CORS(app)
 
 # Import the routes After the Flask app is created
 # pylint: disable=wrong-import-position, cyclic-import, wrong-import-order
