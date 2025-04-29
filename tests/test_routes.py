@@ -7,7 +7,6 @@ Test cases can be run with the following:
 """
 import os
 import logging
-#import triangle
 from unittest import TestCase
 from tests.factories import AccountFactory
 from service.common import status  # HTTP Status Codes
@@ -26,6 +25,7 @@ HTTPS_ENVIRON = {'wsgi.url_scheme': 'https'}
 ######################################################################
 #  T E S T   C A S E S
 ######################################################################
+
 
 class TestAccountService(TestCase):
     """Account Service Tests"""
@@ -199,4 +199,3 @@ class TestAccountService(TestCase):
         # Check for the CORS header
         self.assertEqual(response.headers.get('Access-Control-Allow-Origin'), '*')
 
-        
